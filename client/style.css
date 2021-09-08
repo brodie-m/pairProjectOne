@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-light: #f2f2f2;
+  --main-dark: rgba(0,0,0,0.7);
+  --main-darker: rgba(0,0,0,0.9);
+}
+
+body {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--main-darker);
+}
+/* ul {
+  margin-left: 0px;
+} */
+
+ul {
+  padding-left: 0px;
+}
+li {
+  list-style: none;
+  display:inline-block;
+  margin-left: none;
+}
+
+a {
+  text-decoration: none;
+  margin-left:0px;
+  color: var(--main-darker)
+}
+
+hr {
+  background-color: var(--main-light);
+  opacity: 0.3;
+}
+
+.lower-footer-left {
+  width: 33.3%;
+  text-align: start;
+  margin-left: 13px;
+}
+
+.lower-footer-right {
+  width: 33.3%;
+  text-align: end;
+  margin-right:13px;
+}
+
+.middle-footer {
+  width: 33.3%;
+  text-align: center;
+}
+
+.lower-footer-right a {
+  margin-right: 10px;
+}
+
+
+
+.lower-footer-left a {
+  margin-left: 10px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+button {
+  padding: 5px;
+  border: 0px solid transparent;
+  border-radius: 5%;
+}
+
+
+
+.header {
+
+}
+.actual-footer {
+  display: flex;
+  flex-basis: 0;
+  justify-content: space-evenly;
+}
+
+.country{
+  margin-left:20px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color:var(--main-light);
+  color:var(--main-dark);
+  
+  
+}
+
+footer a{
+  color:var(--main-dark);
+}
+
+#searchBarText {
+  margin-bottom: 20px;
+  width: 100%;
+  padding:10px 7px;
+  border-radius:40px;
+  border: 2px solid rgba(0,0,0,0.2)
+}
+/* 
+.main-image {
+  display: block;
+  background-image: url("https://gyazo.com/804b7214c6c75f5f900ea342014b28f7");
+} */
+
+.menu {
+ display: flex;
+ width: 100%;
+ justify-content: space-between;
+}
+.nav-left {
+  text-align: start;
+  left: 0;
+  margin-left:20px;
+}
+
+.nav-left a {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.nav-right a {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.nav-right {
+  text-align: end;
+  margin-right:20px;
+}
+.main-image {
+
+}
+.search-bar {
+  width: 40vw;
+}
+
+.btn {
+  padding:10px 12px;
+  margin-left:10px;
+  margin-right:10px;
+}
+
+
+.search-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+p.country-left{
+  
+}
