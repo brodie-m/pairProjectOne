@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-  
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>repl.it</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="search-page">
     <header class="header">
       <nav class="menu">
         <div class="nav-left">
           <ul>
             <li><a href="">About</a></li>
             <li><a href="">Store</a></li>
-            
-            
+
+
           </ul>
         </div>
 
-        
+
         <div class="nav-right">
           <ul>
             <li><a href="">Gmail</a></li>
@@ -32,58 +35,63 @@
         </div>
       </nav>
     </header>
-    
-<section>
-    <div class="main-image">
-      <img src="https://tse1.mm.bing.net/th?id=OIP.sxbC6xPr75-iYbKTARC60AHaDt&pid=Api&P=0&w=352&h=177" alt="">
-    </div>
+
+    <section>
+      <div class="main-image">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.sxbC6xPr75-iYbKTARC60AHaDt&pid=Api&P=0&w=352&h=177" alt="">
+      </div>
 
 
-<form action="">
-    <div class="search-bar">
-      <input type="text" placeholder="type something" id="searchBarText">
-      <br>
-      <div class="search-buttons">
-      <button class="btn btn-search">Google Search</button>
-      <button class="btn btn-search">I'm Feeling Lucky</button>
-      </div>
-    </div>
-    
-     </form>
-    
-    
-    
-    <footer>
-      <div class="country">
-      <p class="country-text">
-        United Kingdom
-      </p>
-      </div>
-          <hr>
-          <div class="actual-footer">
-            
-            <div class="lower-footer-left">
-          <ul>
-            <li><a href="">Advertising</a></li>
-            <li><a href="">Business</a></li>
-            <li><a href="">How Search Works</a></li>
-          </ul>
+      <form action="">
+        <div class="search-bar">
+          <input type="text" placeholder="type something" id="searchBarText">
+          <br>
+          <div class="search-buttons">
+            <button class="btn btn-search" id="google-search-button">Google Search</button>
+            <button class="btn btn-search" id="im-feeling-lucky-button">I'm Feeling Lucky</button>
           </div>
-        <div class="middle-footer">
-        <p>
-          🍃 Carbon neutral since 2007
-        </p>
-      </div>
-        <div class="lower-footer-right">
-            <ul>
-            <li><a href="">Privacy</a></li>
-            <li><a href="">Terms</a></li>
-            <li><a href="">Settings</a></li>
-          </ul>
         </div>
-      </div>
-      </footer>    
-      </section>
 
-        </body>
+      </form>
+
+
+
+      <footer>
+        <div class="country">
+          <p class="country-text">
+            United Kingdom
+          </p>
+        </div>
+        <hr>
+        <div class="actual-footer">
+
+          <div class="lower-footer-left">
+            <ul>
+              <li><a href="">Advertising</a></li>
+              <li><a href="">Business</a></li>
+              <li><a href="">How Search Works</a></li>
+            </ul>
+          </div>
+          <div class="middle-footer">
+            <p>
+              🍃 Carbon neutral since 2007
+            </p>
+          </div>
+          <div class="lower-footer-right">
+            <ul>
+              <li><a href="">Privacy</a></li>
+              <li><a href="">Terms</a></li>
+              <li><a href="">Settings</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </div>
+  <div class="card hidden" id="results-card">
+    <div class="card-text" id="card-text"></div>
+    <div class="card-image" id="card-image"></div>
+</div>
+</body>
+
 </html>

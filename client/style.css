@@ -4,8 +4,8 @@
 
 :root {
   --main-light: #f2f2f2;
-  --main-dark: rgba(0,0,0,0.7);
-  --main-darker: rgba(0,0,0,0.9);
+  --main-dark: rgba(0, 0, 0, 0.7);
+  --main-darker: rgba(0, 0, 0, 0.9);
 }
 
 body {
@@ -13,6 +13,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--main-darker);
 }
+
 /* ul {
   margin-left: 0px;
 } */
@@ -20,15 +21,16 @@ body {
 ul {
   padding-left: 0px;
 }
+
 li {
   list-style: none;
-  display:inline-block;
+  display: inline-block;
   margin-left: none;
 }
 
 a {
   text-decoration: none;
-  margin-left:0px;
+  margin-left: 0px;
   color: var(--main-darker)
 }
 
@@ -46,7 +48,7 @@ hr {
 .lower-footer-right {
   width: 33.3%;
   text-align: end;
-  margin-right:13px;
+  margin-right: 13px;
 }
 
 .middle-footer {
@@ -80,40 +82,40 @@ button {
 
 
 
-.header {
+.header {}
 
-}
 .actual-footer {
   display: flex;
   flex-basis: 0;
   justify-content: space-evenly;
 }
 
-.country{
-  margin-left:20px;
+.country {
+  margin-left: 20px;
 }
 
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color:var(--main-light);
-  color:var(--main-dark);
-  
-  
+  background-color: var(--main-light);
+  color: var(--main-dark);
+
+
 }
 
-footer a{
-  color:var(--main-dark);
+footer a {
+  color: var(--main-dark);
 }
 
 #searchBarText {
   margin-bottom: 20px;
   width: 100%;
-  padding:10px 7px;
-  border-radius:40px;
-  border: 2px solid rgba(0,0,0,0.2)
+  padding: 10px 7px;
+  border-radius: 40px;
+  border: 2px solid rgba(0, 0, 0, 0.2)
 }
+
 /* 
 .main-image {
   display: block;
@@ -121,14 +123,15 @@ footer a{
 } */
 
 .menu {
- display: flex;
- width: 100%;
- justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
+
 .nav-left {
   text-align: start;
   left: 0;
-  margin-left:20px;
+  margin-left: 20px;
 }
 
 .nav-left a {
@@ -143,19 +146,19 @@ footer a{
 
 .nav-right {
   text-align: end;
-  margin-right:20px;
+  margin-right: 20px;
 }
-.main-image {
 
-}
+.main-image {}
+
 .search-bar {
   width: 40vw;
 }
 
 .btn {
-  padding:10px 12px;
-  margin-left:10px;
-  margin-right:10px;
+  padding: 10px 12px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 
@@ -164,6 +167,13 @@ footer a{
   justify-content: center;
 }
 
-p.country-left{
-  
+p.country-left {}
+
+.card {
+  border: 2px solid black;
+  box-shadow: 0px 0px 10px black;
+}
+
+.hidden {
+  visibility: hidden;
 }
