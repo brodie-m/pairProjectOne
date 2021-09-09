@@ -20,9 +20,10 @@ async function dealsWithClick(e) {
 
 
     //make card
-    
+
     const users = await fetch(`http://localhost:3000/users/${query}`)
     const allUser = await users.json()
+    generateInterests(allUser);
     console.log(allUser)
     generateCard(allUser)
 }
@@ -40,11 +41,11 @@ function generateCard(allUser) {
         const title = document.createElement('h1')
         title.innerHTML = `${allUser[i].firstName}  ${allUser[i].lastName}`
         // add some filler text
-        const someLorem = document.createElement('p')
-        someLorem.innerHTML = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, libero."
+        const interests = document.createElement('p')
+        interests.innerHTML = `One of my interests is: ${allUser[i].interests}`
         card.append(img);
         card.append(title);
-        card.append(someLorem)
+        card.append(interests)
         document.querySelector('.card-host').append(card)
     }
 }
@@ -73,7 +74,8 @@ function getSearchQuery() {
 function generateInterests(users) {
     const interests = ['coding', 'cooking', 'baking', 'badminton', 'football', 'gym', 'chess', 'test driven development']
     for (let i = 0; i < users.length; i++) {
-        users[i].interests = ``
+        const randomInterest = interests[Math.floor(Math.random()*(interests.length))]
+        users[i].interests = `${randomInterest}`
     }
 }
 
