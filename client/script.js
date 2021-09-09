@@ -28,10 +28,11 @@ async function dealsWithGoogleSearch(e) {
     if (query === 'all') {
         query = ''
     }
+    // at this stage, our users must include post data in order to search by post description or tags
     const users = await fetch(`http://localhost:3000/users/${query}`)
     const allUser = await users.json()
-    generateInterests(allUser);
-    console.log(allUser)
+    // generateInterests(allUser);
+    // console.log(allUser)
     generateCard(allUser)
 }
 
@@ -127,6 +128,15 @@ function generateInterests(users) {
     for (let i = 0; i < users.length; i++) {
         const randomInterest = interests[Math.floor(Math.random() * (interests.length))]
         users[i].interests = `${randomInterest}`
+    }
+}
+
+async function generatePosts(users) {
+    await fetch(`http://localhost:3000/posts`)
+    const allPosts = await posts.json()
+    for (let i = 0; i<users.length; i++) {
+        const randomPost = allPosts[Math.floor(Math.random() * (allPosts.length))]
+        users[i].post = `${randomPost}`
     }
 }
 
