@@ -1,13 +1,40 @@
 const searchButton = document.getElementById('google-search-button')
+const luckyButton = document.getElementById('lucky-button')
+searchButton.addEventListener('click', e => dealsWithGoogleSearch(e))
+luckyButton.addEventListener('click', e => dealsWithLucky(e))
 
-async function dealsWithClick(e) {
+async function dealsWithLucky(e) {
+    e.preventDefault();
+    let query = getSearchQuery();
+    pageConversion(query);
+    const users = await fetch(`http://localhost:3000/users/`)
+    const allUser = await users.json()
+    console.log(allUser.length)
+    const randomIndex = Math.floor(Math.random() * (allUser.length))
+    console.log(randomIndex)
+    const randomUser = allUser[randomIndex];
+    generateInterests([randomUser]);
+    generateCard([randomUser]);
+}
+
+async function dealsWithGoogleSearch(e) {
     e.preventDefault();
     console.log('clicked')
     let query = getSearchQuery();
     if (!query) {
         return
     }
-    //page conversion
+    pageConversion(query);
+  
+
+    const users = await fetch(`http://localhost:3000/users/${query}`)
+    const allUser = await users.json()
+    generateInterests(allUser);
+    console.log(allUser)
+    generateCard(allUser)
+}
+
+function pageConversion(query) {
     document.querySelector('.search-page').classList.add('hidden');
     document.getElementById('results-card').classList.remove('hidden');
     document.getElementById('nav-middle').classList.toggle('hidden');
@@ -16,16 +43,6 @@ async function dealsWithClick(e) {
     }
     const resultsBar = document.getElementById('resultsBar')
     resultsBar.setAttribute("placeholder", `${query}`)
-    //end page conversion
-
-
-    //make card
-
-    const users = await fetch(`http://localhost:3000/users/${query}`)
-    const allUser = await users.json()
-    generateInterests(allUser);
-    console.log(allUser)
-    generateCard(allUser)
 }
 
 function generateCard(allUser) {
@@ -51,7 +68,7 @@ function generateCard(allUser) {
 }
 
 
-searchButton.addEventListener('click', e => dealsWithClick(e))
+
 
 
 // //append
