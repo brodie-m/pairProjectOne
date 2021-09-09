@@ -3,7 +3,7 @@ const searchButton = document.getElementById('google-search-button')
 async function dealsWithClick(e) {
     e.preventDefault();
     console.log('clicked')
-    const query = getSearchQuery();
+    let query = getSearchQuery();
     if (!query) {
         return
     }
@@ -11,7 +11,9 @@ async function dealsWithClick(e) {
     document.querySelector('.search-page').classList.add('hidden');
     document.getElementById('results-card').classList.remove('hidden');
     document.getElementById('nav-middle').classList.toggle('hidden');
-    
+    if (query === 'all') {
+        query = ''
+    }
     const resultsBar = document.getElementById('resultsBar')
     resultsBar.setAttribute("placeholder", `${query}`)
     //end page conversion
