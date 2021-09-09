@@ -1,6 +1,4 @@
 const axios = require('axios');
-
-
 const getUsers = async () => {
     const users = await axios('https://dummyapi.io/data/v1/user?page=1&limit=500', {
 
@@ -10,11 +8,6 @@ const getUsers = async () => {
         }
     })
     const usersData = await users.data;
-
-    // console.log(users.data)
     return users.data;
 }
-
-//getUsers();
-
-module.exports = getUsers;
+module.exports = getUsers

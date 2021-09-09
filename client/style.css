@@ -203,6 +203,8 @@ textarea:focus, input:focus{
 p.country-left {}
 
 .card {
+  display: flex;
+  flex-direction: column;
   border: 2px solid black;
   box-shadow: 0px 0px 5px black;
   padding: 5px;
@@ -211,6 +213,8 @@ p.country-left {}
 }
 
 .card-image-round {
+  width: 100px;
+  height: 100px;
   border: 2px solid black;
   border-radius: 50px;
   justify-content: center;
@@ -234,4 +238,9 @@ p.country-left {}
   justify-content: center;
   width: 80vw;
   margin-left: 10vw;
+}
+
+.post-image {
+  width: 200px;
+  height: 100px;
 }

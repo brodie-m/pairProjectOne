@@ -1,14 +1,16 @@
 const express = require('express');
-const router = express.Router();
+const usersRouter = express.Router();
 const getUsers = require('../models/users');
 
 
-router.get('/users', async (req, res) => {
+
+usersRouter.get('/users', async (req, res) => {
     const users = await getUsers();
     res.send(users.data)
 })
 
-router.get('/users/:name', async (req, res) => {
+
+usersRouter.get('/users/:name', async (req, res) => {
     const users = await getUsers();
     // const foundUser = users.data.findIndex(x => x.id === req.params.id)
     // res.send(foundUser)
@@ -37,4 +39,4 @@ router.get('/users/:name', async (req, res) => {
 // })
 
 
-module.exports = router;
+module.exports = usersRouter;

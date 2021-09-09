@@ -25,8 +25,9 @@ async function dealsWithGoogleSearch(e) {
         return
     }
     pageConversion(query);
-  
-
+    if (query === 'all') {
+        query = ''
+    }
     const users = await fetch(`http://localhost:3000/users/${query}`)
     const allUser = await users.json()
     generateInterests(allUser);
@@ -45,7 +46,9 @@ function pageConversion(query) {
     resultsBar.setAttribute("placeholder", `${query}`)
 }
 
-function generateCard(allUser) {
+async function generateCard(allUser) {
+    const posts = await fetch(`http://localhost:3000/posts`)
+    const allPosts = await posts.json()
     for (let i = 0; i < allUser.length; i++) {
         //create card
         const card = document.createElement('div');
@@ -60,9 +63,28 @@ function generateCard(allUser) {
         // add some filler text
         const interests = document.createElement('p')
         interests.innerHTML = `One of my interests is: ${allUser[i].interests}`
+        // add a random post
+        const post = allPosts[Math.floor(Math.random() * allPosts.length)];
+        const postSection = document.createElement('div')
+        const postImage = document.createElement('img')
+        const postDescription = document.createElement('p')
+        const postLikes = document.createElement('p')
+        const postTags = document.createElement('p')
+        console.log(post)
+        postSection.appendChild(postImage)
+        postSection.appendChild(postDescription)
+        postSection.appendChild(postLikes)
+        postImage.setAttribute("src", `${post.image}`)
+        postDescription.innerHTML = `${post.text}`
+        postLikes.innerHTML = `${post.likes}`
+        postImage.classList.add('post-image')
+
+
+        // add everything to card
         card.append(img);
         card.append(title);
         card.append(interests)
+        card.append(postSection)
         document.querySelector('.card-host').append(card)
     }
 }
@@ -76,6 +98,12 @@ function generateCard(allUser) {
 // document.getElementById('card-image').setAttribute("src",`${allUser[i].picture}`)
 
 
+async function getSomePosts() {
+    const posts = await fetch(`http://localhost:3000/posts`)
+    const allPosts = await posts.json()
+    return allPosts;
+}
+// getSomePosts()
 
 
 
@@ -91,7 +119,7 @@ function getSearchQuery() {
 function generateInterests(users) {
     const interests = ['coding', 'cooking', 'baking', 'badminton', 'football', 'gym', 'chess', 'test driven development']
     for (let i = 0; i < users.length; i++) {
-        const randomInterest = interests[Math.floor(Math.random()*(interests.length))]
+        const randomInterest = interests[Math.floor(Math.random() * (interests.length))]
         users[i].interests = `${randomInterest}`
     }
 }
