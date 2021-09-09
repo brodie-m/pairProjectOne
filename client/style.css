@@ -7,6 +7,8 @@
   --main-dark-ish: rgba(0,0,0,0.3);
   --main-dark: rgba(0, 0, 0, 0.7);
   --main-darker: rgba(0, 0, 0, 0.9);
+  --main-blue: rgba(0,120,200,1);
+  --main-red: rgba(220,40,0,1);
 }
 
 body {
@@ -213,11 +215,12 @@ p.country-left {}
 }
 
 .card-image-round {
-  width: 100px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   border: 2px solid black;
-  border-radius: 50px;
-  justify-content: center;
+  border-radius: 50%;
+  margin-left: 40%;
+  box-shadow: 0px 0px 10px var(--main-dark)
 }
 
 .hidden {
@@ -240,7 +243,27 @@ p.country-left {}
   margin-left: 10vw;
 }
 
+.card-host h1 {
+  text-align: center;
+  color: var(--main-blue)
+}
+
+.card-host p {
+  text-align: center;
+}
+
+.card-host h2 {
+  text-align: center;
+}
+
+.card-host div p {
+  color: var(--main-red);
+}
+
 .post-image {
-  width: 200px;
-  height: 100px;
+  width: 30vw;
+  height: 20vh;
+  margin-left: 30%;
+  border-radius: 5%;
+  box-shadow: 0px 0px 10px var(--main-dark);
 }

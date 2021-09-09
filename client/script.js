@@ -61,22 +61,28 @@ async function generateCard(allUser) {
         const title = document.createElement('h1')
         title.innerHTML = `${allUser[i].firstName}  ${allUser[i].lastName}`
         // add some filler text
-        const interests = document.createElement('p')
-        interests.innerHTML = `One of my interests is: ${allUser[i].interests}`
+        const interests = document.createElement('h2')
+        const descriptionChoices = [`I am passionate about`,`I really like`,`I absolutely love`,`I hate`,`My one true desire is`]
+        interests.innerHTML = `${descriptionChoices[Math.floor(Math.random() * descriptionChoices.length)]} ${allUser[i].interests}`
         // add a random post
         const post = allPosts[Math.floor(Math.random() * allPosts.length)];
         const postSection = document.createElement('div')
         const postImage = document.createElement('img')
+        const descriptionAndLikes = document.createElement('div')
         const postDescription = document.createElement('p')
         const postLikes = document.createElement('p')
         const postTags = document.createElement('p')
         console.log(post)
         postSection.appendChild(postImage)
-        postSection.appendChild(postDescription)
-        postSection.appendChild(postLikes)
+        postSection.appendChild(descriptionAndLikes)
+        descriptionAndLikes.appendChild(postDescription)
+        descriptionAndLikes.appendChild(postLikes)
+
         postImage.setAttribute("src", `${post.image}`)
         postDescription.innerHTML = `${post.text}`
-        postLikes.innerHTML = `${post.likes}`
+        postLikes.innerHTML = `<i class="fas fa-heart"></i>
+
+        ${post.likes}`
         postImage.classList.add('post-image')
 
 
